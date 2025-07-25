@@ -1,0 +1,47 @@
+{
+  "saveSnippet": {
+    "name": "react-hook-template",
+    "description": "A reusable React hook template with TypeScript",
+    "code": "import { useState, useEffect } from 'react';
+
+export const use{{HookName}} = ({{initialValue}}: {{ValueType}}) => {
+  const [{{stateName}}, set{{StateName}}] = useState<{{ValueType}}>({{initialValue}});
+
+  useEffect(() => {
+    // Add your logic here
+    console.log('{{HookName}} initialized with:', {{initialValue}});
+  }, [{{initialValue}}]);
+
+  return {
+    {{stateName}},
+    set{{StateName}}
+  };
+};",
+    "language": "typescript",
+    "tags": ["react", "hook", "typescript"],
+    "variables": [
+      {
+        "name": "HookName",
+        "description": "Hook name (e.g., User, Counter, Api)",
+        "required": true
+      },
+      {
+        "name": "initialValue",
+        "description": "Initial state value",
+        "required": true
+      },
+      {
+        "name": "ValueType",
+        "description": "Type for the state value",
+        "defaultValue": "string",
+        "required": false
+      },
+      {
+        "name": "stateName",
+        "description": "State variable name",
+        "defaultValue": "value",
+        "required": false
+      }
+    ]
+  }
+}
